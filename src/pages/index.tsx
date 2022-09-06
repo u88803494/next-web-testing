@@ -13,8 +13,12 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <h1 className="text-3xl font-bold underline">
+          Hello world! Tailwindcss
+        </h1>
+
         <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
+          <Button className="bg-slate-100 hover:bg-blue-300" variant="text">Text</Button>
           <Button variant="contained">Contained</Button>
           <Button variant="outlined">Outlined</Button>
         </Stack>
