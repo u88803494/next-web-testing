@@ -1,17 +1,54 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Stack, Button } from '@mui/material'
+import { Container, Stack, Button, Typography, Slider, Link } from '@mui/material'
+
+
+function Copyright() {
+  return (
+    <Typography
+      className="text-center"
+      variant="body2" color="text.secondary"
+    >
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    // <div className={styles.container}>
 
-      <main className={styles.main}>
+    //   <main className={styles.main}>
 
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    //     <h1 className={styles.title}>
+    //       Welcome to <a href="https://nextjs.org">Next.js!</a>
+    //     </h1>
+    //   </main>
+
+    //   <footer className={styles.footer}>
+    //     <a
+    //       href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Powered by{' '}
+    //       <span className={styles.logo}>
+    //         <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+    //       </span>
+    //     </a>
+    //   </footer>
+    // </div>
+
+    <Container maxWidth="sm">
+      <div className="my-4">
+        <Typography variant="h4" component="h1" gutterBottom>
+          Create React App + Tailwind CSS example
+        </Typography>
 
         <h1 className="text-3xl font-bold underline">
           Hello world! Tailwindcss
@@ -22,21 +59,15 @@ const Home: NextPage = () => {
           <Button variant="contained">Contained</Button>
           <Button variant="outlined">Outlined</Button>
         </Stack>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+        <Slider
+          className="my-4"
+          defaultValue={30}
+          classes={{ active: 'shadow-none' }}
+          componentsProps={{ thumb: { className: 'hover:shadow-none' } }}
+        />
+        <Copyright />
+      </div>
+    </Container>
   )
 }
 
