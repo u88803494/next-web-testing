@@ -13,4 +13,8 @@ module.exports = {
     }
   },
   plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
+  important: '#root',
 }
