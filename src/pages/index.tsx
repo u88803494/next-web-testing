@@ -1,16 +1,44 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { Stack, Button } from '@mui/material'
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+} from '@mui/material'
+import Link from 'components/Link';
+import ProTip from 'components/ProTip';
+import Copyright from 'components/Copyright';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <Container maxWidth="lg">
 
       <main>
         <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <Box
+        sx={{
+          my: 4,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Typography variant="h4" component="h1" gutterBottom>
+          MUI v5 + Next.js with TypeScript example
+        </Typography>
+        <Link href="/about" color="secondary">
+          Go to the about page
+        </Link>
+        <ProTip />
+        <Copyright />
+        </Box>
+        
         <Stack spacing={2} direction="row">
           <Button variant="text">Text</Button>
           <Button variant="contained">Contained</Button>
@@ -30,7 +58,7 @@ const Home: NextPage = () => {
           </span>
         </a>
       </footer>
-    </div>
+    </Container>
   )
 }
 
