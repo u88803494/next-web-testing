@@ -16,5 +16,5 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-  important: '#root',
+  important: '#__next',
 }
